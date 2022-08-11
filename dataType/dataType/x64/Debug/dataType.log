@@ -1,0 +1,3 @@
+﻿  integer.cpp
+E:\自学\C++\dataType\dataType\integer.cpp(8,15): warning C4309: “初始化”: 截断常量值
+  dataType.vcxproj -> E:\自学\C++\dataType\x64\Debug\dataType.exe
