@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int main() {
+int main1() {
 	// 整型
 	// 短整型 -2^15 ~ 2^15-1
 	// short num1 = 10;
