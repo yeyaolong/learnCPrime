@@ -2,7 +2,7 @@
 #include<iomanip>
 using namespace std;
 
-int main() {
+int main3() {
 
 	cout << "单精度数占用内存:" << sizeof(float) << endl;	// 4
 	cout << "双精度变量占用内存:" << sizeof(double) << endl;	// 8

@@ -1,4 +1,5 @@
-﻿  浮点型.cpp
-E:\自学\C++\dataType\dataType\浮点型.cpp(14,28): warning C4305: “初始化”: 从“double”到“float”截断
-E:\自学\C++\dataType\dataType\浮点型.cpp(34,19): warning C4305: “初始化”: 从“double”到“float”截断
+﻿  07布尔数据类型.cpp
+E:\自学\C++\dataType\dataType\07布尔数据类型.cpp(16,18): warning C4305: “初始化”: 从“char”到“bool”截断
+E:\自学\C++\dataType\dataType\07布尔数据类型.cpp(18,22): warning C4305: “初始化”: 从“float”到“bool”截断
+E:\自学\C++\dataType\dataType\07布尔数据类型.cpp(21,16): warning C4305: “初始化”: 从“int”到“bool”截断
   dataType.vcxproj -> E:\自学\C++\dataType\x64\Debug\dataType.exe
