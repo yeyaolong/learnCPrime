@@ -16,7 +16,7 @@ int max(int a, int b);
 因为实际调用是vs 2022内置的max函数
 */
 
-int main() {
+int main5() {
 
 	int a = 10;
 	int b = 20;

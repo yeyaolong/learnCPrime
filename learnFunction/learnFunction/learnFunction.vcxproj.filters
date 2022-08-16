@@ -30,5 +30,16 @@
     <ClCompile Include="05 函数的声明.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="06 函数分文件编写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="swap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="swap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
