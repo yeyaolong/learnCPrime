@@ -132,6 +132,9 @@
     <ClCompile Include="03 五只小猪称体重.cpp" />
     <ClCompile Include="04 数组元素逆置.cpp" />
     <ClCompile Include="05 冒泡排序.cpp" />
+    <ClCompile Include="06 二维数组定义方式.cpp" />
+    <ClCompile Include="07 二维数组数组名.cpp" />
+    <ClCompile Include="08 二维数组案例.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

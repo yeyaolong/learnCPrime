@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int main() {
+int main5() {
 
 	int arr[] = { 4, 2, 8, 0, 5, 7, 1, 3, 9 };
 	int tmp;
