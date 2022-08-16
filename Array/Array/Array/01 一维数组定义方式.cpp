@@ -57,11 +57,23 @@ int main1() {
 	int sizeTotal4 = sizeof(arr4);
 	int sizeOne4 = sizeof(arr4[0]);
 	int len4 = sizeTotal4 / sizeOne4;
-
+	cout << "不全赋值" << endl;
+	for (int i = 0; i < len4; i++) {
+		cout << arr4[i] << "\t";
+	}
 
 	for (int i = 0; i < len4; i++) {
 		cout << "arr4下标" << i << ": " << arr4[i] << endl;
 	}
+	// 全都不赋值
+	int arr5[5];
+	cout << "全都不赋值" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << arr5[i] << "\t"; // 打印出来的是内存地址
+	}
+
+
+	
 
 	system("pause");
 
