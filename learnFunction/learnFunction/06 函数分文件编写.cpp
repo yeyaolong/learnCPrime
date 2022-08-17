@@ -15,8 +15,8 @@ using namespace std;
 //	cout << "交换后，a = " << a << " b = " << b << endl;
 //}
 
-// 1、创建.h后缀名头文件(swap.h)
-// 2、创建.cpp后缀名的源文件（swap.cpp）
+// 1、创建.h后缀名头文件(swap.h) ---> 用来写函数声明
+// 2、创建.cpp后缀名的源文件（swap.cpp） --->  用来写函数定义
 // 3、在swap.h头文件中写函数声明
 // 4、在swap.cpp文件中引入头文件#include "swap.h" // 必须用双引号
 // 5、此时swap.cpp文件中报错，cout和endl找不到,
