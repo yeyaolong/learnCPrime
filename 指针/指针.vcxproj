@@ -130,6 +130,7 @@
     <ClCompile Include="01 指针的基本概念.cpp" />
     <ClCompile Include="02 指针所占内存空间.cpp" />
     <ClCompile Include="03 空指针.cpp" />
+    <ClCompile Include="04 野指针.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
