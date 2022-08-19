@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int main() {
+int main4() {
 
 	// 定义：指针变量指向非法的内存空间
 	// 非法的定义：没有使用变量声明来操作内存就直接去指向内存

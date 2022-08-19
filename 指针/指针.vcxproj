@@ -131,6 +131,10 @@
     <ClCompile Include="02 指针所占内存空间.cpp" />
     <ClCompile Include="03 空指针.cpp" />
     <ClCompile Include="04 野指针.cpp" />
+    <ClCompile Include="05 const修饰指针.cpp" />
+    <ClCompile Include="06 指针和数组.cpp" />
+    <ClCompile Include="07 指针和函数.cpp" />
+    <ClCompile Include="08 指针、数组、函数.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
