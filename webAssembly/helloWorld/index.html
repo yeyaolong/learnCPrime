@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //斐波那契数列
+			/*
+            function fib(x) {
+                if (x <= 0) {
+                    return 0
+                }
+                if (x <= 2) {
+                    return 1;
+                }
+                return fib(x-1) + fib(x-2);
+            }
+            console.time("测试 fib 速度：")
+            var re = fib(40);
+            console.timeEnd("测试 fib 速度：")
+			*/
+			// 使用webAssembly执行斐波那契数列
+			
+			fetch('./test.wasm')
+				.then(response => response.arrayBuffer())
+				.then(bytes => {
+					return WebAssembly.compile(bytes);
+				})
+				.then(mod => {
+					const instance = new WebAssembly.Instance(mod);
+					const a = instance.exports;
+					
+					console.log(a);
+					console.time("测试fib速度: ");
+					// var re = a.fib(40); // 编译后，函数名发生改变
+					var re = a._Z3fibi(40);
+					console.timeEnd("测试fib速度: ");
+				})
+        </script>
+    </body>
+</html>

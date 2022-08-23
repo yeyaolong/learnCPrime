@@ -1,2 +1,3 @@
 E:\自学\webAssembly\helloWorld\斐波那契数列\x64\Debug\斐波那契数列.exe
 E:\自学\C++\webAssembly\helloWorld\斐波那契数列\x64\Debug\斐波那契数列.exe
+F:\workspace\c++\learnCPrime\webAssembly\helloWorld\斐波那契数列\x64\Debug\斐波那契数列.exe
