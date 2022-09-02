@@ -18,10 +18,21 @@
                 }
                 return fib(x-1) + fib(x-2);
             }
-            console.time("测试 fib 速度：")
-            var re = fib(40);
-            console.timeEnd("测试 fib 速度：")
+			
+			(function() {
+				const startDate = new Date().getTime();
+				// console.time("测试 fib 速度：")
+				var re = fib(40);
+				// console.timeEnd("测试 fib 速度：")		
+				const endDate= new Date().getTime();
+				const duration = endDate - startDate;
+				//const dom = document.getElementById("app");		
+				//dom.innerHTML = "<h1>执行时间：</h1>" + duration + "ms"
+				console.log('duration=', duration);
+			})()
 			*/
+			
+			
 			// 使用webAssembly执行斐波那契数列
 			
 			fetch('./test.wasm')
@@ -34,11 +45,20 @@
 					const a = instance.exports;
 					
 					console.log(a);
-					console.time("测试fib速度: ");
-					// var re = a.fib(40); // 编译后，函数名发生改变
-					var re = a._Z3fibi(40);
-					console.timeEnd("测试fib速度: ");
+					// console.time("测试fib速度: ");
+					const startDate = new Date().getTime();
+					// var re = a.fib(40);
+					var re = a._Z3fibi(40);  // 编译后，函数名发生改变
+					// console.timeEnd("测试fib速度: ");
+					const endDate= new Date().getTime();
+					const duration = endDate - startDate;
+					const dom = document.getElementById("app");
+					
+					//dom.innerHTML = "<h1>执行时间：</h1>" + duration + "ms"
+					console.log('duration=', duration);
 				})
+			
         </script>
+		<div id="app"></div>
     </body>
 </html>

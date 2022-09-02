@@ -1,0 +1,3 @@
+﻿  02 栈区.cpp
+F:\workspace\c++\learnCPrime\内存四区\02 栈区.cpp(11): warning C4172: 返回局部变量或临时变量的地址: a
+  内存四区.vcxproj -> F:\workspace\c++\learnCPrime\内存四区\x64\Debug\内存四区.exe
