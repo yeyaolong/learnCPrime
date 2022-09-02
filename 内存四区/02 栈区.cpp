@@ -17,7 +17,7 @@ void func2(int c) {
 	cout << "d的地址：" << &d << endl; // 形参与局部变量地址很近，都是放在栈区的内存中
 }
 
-int main() {
+int main2() {
 	
 	int* p = func(); // 接收func的返回值
 
