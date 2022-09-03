@@ -12,7 +12,7 @@ int* func3()
 	return p;
 }
 
-int main() {
+int main3() {
 	// 在堆区开辟数据
 
 	int* p = func3();
