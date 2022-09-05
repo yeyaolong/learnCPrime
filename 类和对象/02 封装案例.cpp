@@ -32,7 +32,7 @@ public:	// 公共权限
 
 };
 
-int main() {
+int main2() {
 	// 实例化
 	Student stu;
 
