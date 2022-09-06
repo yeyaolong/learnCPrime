@@ -30,5 +30,8 @@
     <ClCompile Include="05 成员属性设置为私有.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="06 设计立方体类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -47,7 +47,7 @@ public:
 	}
 };
 
-int main() {
+int main5() {
 
 	Person2 p;
 	p.setName("ÕÅÈı");
