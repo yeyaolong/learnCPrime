@@ -279,3 +279,8 @@ class 类名 { 访问权限： 属性/行为 };
 ![20220907](./readme.assets/20220907.png)
 
 https://www.jianshu.com/p/aae91daa65ab
+
+# 20220908
+
+# P105 类和对象-封装-设计案例2-点和圆的关系
+

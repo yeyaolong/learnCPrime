@@ -133,6 +133,10 @@
     <ClCompile Include="04 struct与class区别.cpp" />
     <ClCompile Include="05 成员属性设置为私有.cpp" />
     <ClCompile Include="06 设计立方体类.cpp" />
+    <ClCompile Include="07 点和圆的关系.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="07 Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

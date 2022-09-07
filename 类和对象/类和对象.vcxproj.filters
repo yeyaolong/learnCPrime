@@ -33,5 +33,13 @@
     <ClCompile Include="06 设计立方体类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="07 点和圆的关系.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="07 Point.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

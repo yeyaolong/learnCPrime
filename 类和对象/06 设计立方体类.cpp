@@ -58,7 +58,7 @@ bool cubeEqual(Cube c1, Cube c2) {
 }
 
 
-int main() {
+int main6() {
 
 	Cube c1;
 	c1.setML(10);
