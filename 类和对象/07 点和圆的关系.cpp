@@ -24,8 +24,7 @@ public:
 class Circle {
 private:
 	float radius; // 半径
-	float centerX; // 圆心 x坐标
-	float centerY; // 圆心 y坐标
+	Point center; // 圆心
 
 public:
 	float getRadius() {
@@ -34,23 +33,18 @@ public:
 	void setRadius(float r) {
 		radius = r;
 	}
-	float getCenterX() {
-		return centerX;
+	Point getCenter() {
+		return center;
 	}
-	void setCenterX(float x) {
-		centerX = x;
-	}
-	float getCenterY() {
-		return centerY;
-	}
-	void setCenterY(float y) {
-		centerY = y;
+	void setCenter(Point point) {
+		center = point;
 	}
 	float getDistance(Point p) {
 		float pX = p.getCenterX();
 		float pY = p.getCenterY();
-		float distance = sqrt((pX - centerX) * (pX - centerX) + (pY - centerY) * (pY - centerY));
-		
+		float distance = sqrt((pX - center.getCenterX()) * (pX - center.getCenterX()) + (pY - center.getCenterY()) * (pY - center.getCenterY()));
+		cout << "pX = " << pX << "\tpY = " << pY << endl;
+		cout << "centerX = " << center.getCenterX() << "\tcenterY = " << center.getCenterY() << endl;
 		return distance;
 	}
 };
@@ -61,15 +55,17 @@ int main() {
 
 	Circle c;
 	c.setRadius(10.0f);
-	c.setCenterX(0.0f);
-	c.setCenterY(0.0f);
+	Point circleCenter;
+	circleCenter.setCenterX(0.0f);
+	circleCenter.setCenterY(0.0f);
+	c.setCenter(circleCenter);
 	float radius = c.getRadius();
 	Point p;
 	p.setCenterX(11.0f);
 	p.setCenterY(0.0f);
 
 	float distance = c.getDistance(p);
-
+	cout << "distance = " << distance << endl;
 	if (distance > radius) {
 		cout << "点在圆外" << endl;
 	}
