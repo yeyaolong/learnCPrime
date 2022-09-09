@@ -134,9 +134,12 @@
     <ClCompile Include="05 成员属性设置为私有.cpp" />
     <ClCompile Include="06 设计立方体类.cpp" />
     <ClCompile Include="07 点和圆的关系.cpp" />
+    <ClCompile Include="circle.cpp" />
+    <ClCompile Include="point.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="07 Point.h" />
+    <ClInclude Include="circle.h" />
+    <ClInclude Include="point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
