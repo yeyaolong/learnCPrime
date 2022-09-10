@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int main() {
+int main7() {
 
 	Circle c;
 	c.setRadius(10.0f);

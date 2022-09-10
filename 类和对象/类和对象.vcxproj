@@ -134,6 +134,8 @@
     <ClCompile Include="05 成员属性设置为私有.cpp" />
     <ClCompile Include="06 设计立方体类.cpp" />
     <ClCompile Include="07 点和圆的关系.cpp" />
+    <ClCompile Include="08 构造函数和析构函数.cpp" />
+    <ClCompile Include="09 构造函数的分类及调用.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="point.cpp" />
   </ItemGroup>

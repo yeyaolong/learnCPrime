@@ -1,11 +1,2 @@
-﻿  01 封装的意义.cpp
-  02 封装案例.cpp
-  03 封装的权限控制.cpp
-  04 struct与class区别.cpp
-  05 成员属性设置为私有.cpp
-  06 设计立方体类.cpp
-  07 点和圆的关系.cpp
-  circle.cpp
-  point.cpp
-  正在生成代码...
+﻿  09 构造函数的分类及调用.cpp
   类和对象.vcxproj -> F:\workspace\c++\learnCPrime\类和对象\x64\Debug\类和对象.exe
