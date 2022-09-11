@@ -44,7 +44,7 @@ void test02() {
 	// 3¡¢ÒşÊ½×ª»»·¨
 }
 
-int main() {
+int main9() {
 
 	test02();
 

@@ -48,6 +48,15 @@
     <ClCompile Include="09 构造函数的分类及调用.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="10 拷贝构造函数调用时机.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11 构造函数调用规则.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12 深拷贝与浅拷贝.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">

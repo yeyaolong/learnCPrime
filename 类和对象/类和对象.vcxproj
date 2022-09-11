@@ -136,8 +136,11 @@
     <ClCompile Include="07 点和圆的关系.cpp" />
     <ClCompile Include="08 构造函数和析构函数.cpp" />
     <ClCompile Include="09 构造函数的分类及调用.cpp" />
+    <ClCompile Include="11 构造函数调用规则.cpp" />
+    <ClCompile Include="12 深拷贝与浅拷贝.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="point.cpp" />
+    <ClCompile Include="10 拷贝构造函数调用时机.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circle.h" />
