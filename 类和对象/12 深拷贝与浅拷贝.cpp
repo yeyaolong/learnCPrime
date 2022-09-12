@@ -44,7 +44,7 @@ void test08() {
 
 }
 
-int main() {
+int main12() {
 
 	test08();
 

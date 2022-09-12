@@ -138,6 +138,11 @@
     <ClCompile Include="09 构造函数的分类及调用.cpp" />
     <ClCompile Include="11 构造函数调用规则.cpp" />
     <ClCompile Include="12 深拷贝与浅拷贝.cpp" />
+    <ClCompile Include="13 初始化列表cpp.cpp" />
+    <ClCompile Include="14 类对象作为类成员.cpp" />
+    <ClCompile Include="15 静态成员变量.cpp" />
+    <ClCompile Include="16 静态成员函数.cpp" />
+    <ClCompile Include="17 成员变量和成员函数分开存储.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="10 拷贝构造函数调用时机.cpp" />
