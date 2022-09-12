@@ -46,7 +46,7 @@ void test17() {
 	cout << "size of p = " << sizeof(p) << endl;
 }
 
-int main() {
+int main17() {
 
 	//test14();
 	//test16();

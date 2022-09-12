@@ -143,6 +143,9 @@
     <ClCompile Include="15 静态成员变量.cpp" />
     <ClCompile Include="16 静态成员函数.cpp" />
     <ClCompile Include="17 成员变量和成员函数分开存储.cpp" />
+    <ClCompile Include="18 this指针的使用.cpp" />
+    <ClCompile Include="19 空指针调用成员函数.cpp" />
+    <ClCompile Include="20 const修饰成员函数.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="10 拷贝构造函数调用时机.cpp" />

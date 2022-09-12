@@ -72,6 +72,15 @@
     <ClCompile Include="17 成员变量和成员函数分开存储.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="18 this指针的使用.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="19 空指针调用成员函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="20 const修饰成员函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">
