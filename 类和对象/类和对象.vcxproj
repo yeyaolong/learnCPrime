@@ -146,6 +146,9 @@
     <ClCompile Include="18 this指针的使用.cpp" />
     <ClCompile Include="19 空指针调用成员函数.cpp" />
     <ClCompile Include="20 const修饰成员函数.cpp" />
+    <ClCompile Include="21 全局函数做友元.cpp" />
+    <ClCompile Include="22 友元类.cpp" />
+    <ClCompile Include="23 成员函数做友元.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="10 拷贝构造函数调用时机.cpp" />

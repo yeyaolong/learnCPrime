@@ -81,6 +81,15 @@
     <ClCompile Include="20 const修饰成员函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="21 全局函数做友元.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="22 友元类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="23 成员函数做友元.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">

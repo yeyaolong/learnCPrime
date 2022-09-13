@@ -45,7 +45,7 @@ void test22() {
 
 }
 
-int main() {
+int main20() {
 
 	//test21();
 

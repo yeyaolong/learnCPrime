@@ -444,3 +444,164 @@ C++中空指针也是可以调用成员函数的，但是也要注意有没有�
 - 声明对象前加const称该对象为常对象
 - 常对象只能调用常函数
 
+## P118~P120 类和对象-友元
+
+- P118 类和对象-友元-全局函数做友元
+- P119 类和对象-友元-友元类
+- P120 类和对象-友元-成员函数做友元
+
+生活中你的家有客厅(Public)，有你的卧室(Private)
+
+客厅所有来的客人都可以进去，但是你的卧室是私有的，也就是说只有你能进去。
+
+但是呢，你也可以允许你的好闺蜜好基友进去。
+
+在程序里，有些私有属性也想让类外一些函数或者类进行访问，就需要用到友元的技术
+
+友元的目的就是让一个函数或者类访问另一个类中私有成员。
+
+友元的关键字为`friend`
+
+友元的三种实现
+
+- 全局函数做友元
+- 类做友元
+- 成员函数做友元
+
+P119的时候，遇到一个异常，记录一下.
+
+```c++
+// 错误写法
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Building2; // 先声明一个类，防止GoodGay中报错
+
+
+// 类做友元
+class GoodGay2 {
+public:
+	GoodGay2();
+	void visit(); // 参观函数访问Building中的属性
+
+	Building2* building;
+};
+
+// 在类外实现构造函数,第一个GoodGay表示作用域
+// 注意，这里一定要将这个类外函数放到Building2这个类定义的后面
+// 写在这里是错误的
+GoodGay2::GoodGay2() {
+	// 创建一个建筑物对象
+	building = new Building2;
+}
+// 类外实现 成员函数
+void GoodGay2::visit() {
+	cout << "好基友类正在访问：" << building->m_SittingRoom << endl;
+}
+
+class Building2 {
+public:
+	Building2();
+	string m_SittingRoom;
+private:
+	string m_BedRoom;
+};
+
+// 类外实现构造函数，第一个Building2表示作用域
+Building2::Building2() {
+	m_SittingRoom = "客厅";
+	m_BedRoom = "卧室";
+}
+
+void test24() {
+	GoodGay2 gg;
+
+	gg.visit();
+}
+
+int main() {
+
+	test24();
+
+	system("pause");
+
+	return 0;
+}
+```
+上面这种写法会报错说，使用了未定义类型“Building2”
+
+![image-20220913151449210](F:\workspace\c++\learnCPrime\readme.assets\image-20220913151449210.png)
+
+
+
+尽管我使用了 
+
+`class Building2;`类声明写到最上面，但是依然给我报错说`使用了未定义类型“Building2”`。
+
+造成这个错误的原因是：
+
+```bash
+使用向前声明之后，在类定义之前，类是一个不完全类型(incompete type)，即已知向前声明过的类是一个类型，但不知道包含哪些成员，所以在使用向前声明后，类定义前，只能定义指向该类型的指针及引用而不能使用该类成员。
+```
+
+所以正确写法是，使用GoodGay2的类外实现，并将GoodGay2的类外实现，全部写在 定义Buidling2 类之后。如下所示：
+
+```c++
+// 正确写法
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Building2; // 先声明一个类，防止GoodGay中报错
+
+
+// 类做友元
+class GoodGay2 {
+public:
+	GoodGay2();
+	void visit(); // 参观函数访问Building中的属性
+
+	Building2* building;
+};
+
+class Building2 {
+public:
+	Building2();
+	string m_SittingRoom;
+private:
+	string m_BedRoom;
+};
+
+// 在类外实现构造函数, 第一个GoodGay表示作用域
+// 注意，这里一定要将这个类外函数放到Building2这个类定义的后面
+GoodGay2::GoodGay2() {
+	// 创建一个建筑物对象
+	building = new Building2;
+}
+// 类外实现 成员函数
+void GoodGay2::visit() {
+	cout << "好基友类正在访问：" << building->m_SittingRoom << endl;
+}
+
+// 类外实现构造函数，第一个Building2表示作用域
+Building2::Building2() {
+	m_SittingRoom = "客厅";
+	m_BedRoom = "卧室";
+}
+
+void test24() {
+	GoodGay2 gg;
+
+	gg.visit();
+}
+
+int main() {
+
+	test24();
+
+	system("pause");
+
+	return 0;
+}
+```
