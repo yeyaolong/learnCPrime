@@ -18,5 +18,8 @@
     <ClCompile Include="01 加号运算符重载.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02 左移运算符重载.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
