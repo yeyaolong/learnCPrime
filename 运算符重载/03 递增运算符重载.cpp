@@ -70,7 +70,7 @@ void test04() {
 }
 
 
-int main() {
+int main3() {
 
 	//test03();
 
