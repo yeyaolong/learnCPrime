@@ -38,7 +38,7 @@ void test02() {
 	cout << p << "hello World" << endl; // 没有找到接受“Person”类型的右操作数的运算符(或没有可接受的转换)
 }
 
-int main() {
+int main2() {
 
 	test02();
 
