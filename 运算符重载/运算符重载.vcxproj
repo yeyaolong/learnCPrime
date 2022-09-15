@@ -131,6 +131,8 @@
     <ClCompile Include="02 左移运算符重载.cpp" />
     <ClCompile Include="03 递增运算符重载.cpp" />
     <ClCompile Include="04 赋值运算符重载.cpp" />
+    <ClCompile Include="05 关系运算符重载.cpp" />
+    <ClCompile Include="06 函数调用运算符重载.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

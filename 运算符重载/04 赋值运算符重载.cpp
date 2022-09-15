@@ -68,7 +68,7 @@ void test06() {
 	cout << "p3µÄÄêÁäÎª" << *p3.m_Age << endl;
 }
 
-int main() {
+int main4() {
 
 	//test05();
 	/*int a = 10;
