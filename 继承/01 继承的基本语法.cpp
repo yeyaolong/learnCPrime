@@ -144,7 +144,7 @@ void test01() {
 	cpp.left();
 	cpp.content();
 }
-int main() {
+int main1() {
 
 	test01();
 

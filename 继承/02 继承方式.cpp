@@ -86,7 +86,7 @@ public:
 	}
 };
 
-int main() {
+int main2() {
 
 	system("pause");
 

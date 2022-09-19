@@ -21,5 +21,8 @@
     <ClCompile Include="02 继承方式.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="03 继承中的对象模型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
