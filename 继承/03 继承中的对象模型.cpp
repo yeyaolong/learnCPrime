@@ -29,7 +29,7 @@ void test05()  {
 
 }
 
-int main() {
+int main3() {
 
 	test05();
 

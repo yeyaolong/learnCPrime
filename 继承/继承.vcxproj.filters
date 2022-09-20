@@ -24,5 +24,11 @@
     <ClCompile Include="03 继承中的对象模型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="04 继承中的构造和析构顺序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="05 继承同名成员处理方式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
