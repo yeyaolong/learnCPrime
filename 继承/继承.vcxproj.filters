@@ -24,5 +24,8 @@
     <ClCompile Include="03 继承中的对象模型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="06 同名静态成员处理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
