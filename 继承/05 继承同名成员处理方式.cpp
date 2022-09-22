@@ -55,7 +55,7 @@ void test09() {
 	s.Base5::func(1);
 }
 
-int main() {
+int main5() {
 
 	test08();
 

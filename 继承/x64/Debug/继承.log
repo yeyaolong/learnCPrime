@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 ﻿  继承.vcxproj -> F:\workspace\c++\learnCPrime\继承\x64\Debug\继承.exe
+=======
+﻿  06 同名静态成员处理.cpp
+  继承.vcxproj -> E:\自学\C++\继承\x64\Debug\继承.exe
+>>>>>>> 6dbe4fde9787533ab2b52b2c54972c674eb41fcb
