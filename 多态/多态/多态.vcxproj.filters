@@ -18,5 +18,8 @@
     <ClCompile Include="01 多态的基本语法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02 多态的原理剖析.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
