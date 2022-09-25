@@ -59,7 +59,7 @@ void test03() {
 	// 多出的字节，用来存储 "虚函数指针"
 }
 
-int main() {
+int main2() {
 
 	test02();
 
