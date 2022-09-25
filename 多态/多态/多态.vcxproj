@@ -132,6 +132,7 @@
     <ClCompile Include="03 计算器类.cpp" />
     <ClCompile Include="05 制作饮品.cpp" />
     <ClCompile Include="04 纯虚函数和抽象类.cpp" />
+    <ClCompile Include="06 虚析构和纯虚析构.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

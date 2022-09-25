@@ -86,14 +86,16 @@ Drink* drinkFactory(Drink *abc) {
 void test07() {
 	Drink* coffee = new Coffee;
 	drinkFactory(coffee);
+	// 父类的析构调用了，但是子类的析构没有调用(解决方案见下一节)
 	delete coffee;
 
 	Drink* tea = new Tea();
 	drinkFactory(tea);
+	// 父类的析构调用了，但是子类的析构没有调用(解决方案见下一节)
 	delete tea;
 }
 
-int main() {
+int main5() {
 
 	test07();
 
