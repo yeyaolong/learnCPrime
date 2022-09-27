@@ -4,6 +4,10 @@ using namespace std;
 // 多态
 class Animal {
 public:
+	/*void speak() {
+		cout << "动物在说话" << endl;
+	}*/
+	// 改成虚函数
 	void virtual speak() {
 		cout << "动物在说话" << endl;
 	}

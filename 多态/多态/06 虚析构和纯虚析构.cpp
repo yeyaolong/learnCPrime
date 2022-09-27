@@ -53,7 +53,7 @@ void test08() {
 	delete cat;
 }
 
-int main() {
+int main6() {
 
 	test08();
 
