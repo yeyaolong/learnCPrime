@@ -22,7 +22,7 @@ void test01() {
 
 }
 
-int main() {
+int main1() {
 
 	test01();
 

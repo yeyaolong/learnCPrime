@@ -18,5 +18,11 @@
     <ClCompile Include="01 文本文件-写文件.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02 读文件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="03 二进制文件-写操作.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
