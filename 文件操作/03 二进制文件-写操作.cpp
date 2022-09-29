@@ -25,7 +25,7 @@ void test03() {
 	ofs.close();
 }
 
-int main() {
+int main3() {
 
 	test03();
 
