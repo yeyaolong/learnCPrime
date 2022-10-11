@@ -1,5 +1,8 @@
 #include<iostream>
 #include "workerManager.h";
+#include "employee.h";
+#include "manager.h";
+#include "boss.h";
 using namespace std;
 
 // 展示系统菜单
@@ -47,8 +50,23 @@ void showMenu(WorkerManager &wm) {
 
 int main() {
 
-	WorkerManager wm;
+	
 
+	Worker* worker = NULL;
+	worker = new Employee(1, "张三", 1);
+	worker->showInfo();
+
+	
+	Worker* manager = new Manager(2, "李四", 2);
+	manager->showInfo();
+
+	Worker* boss = new Boss(3, "王五", 3);
+	boss->showInfo();
+
+	/*Boss* boss2 = new Boss(4, "赵六", 4);
+	boss2->showInfo();*/
+	
+	WorkerManager wm;
 	showMenu(wm);
 
 	system("pause");

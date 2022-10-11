@@ -1,10 +1,11 @@
+#include<iostream>
 #include "workerManager.h";
+using namespace std;
 
 // 实现构造函数
 WorkerManager::WorkerManager() {
 	cout << "WorkerManager构造函数" << endl;
 }
-
 
 // 展示菜单
 void WorkerManager::Show_Menu() {
