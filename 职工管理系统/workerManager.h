@@ -4,12 +4,20 @@
 #include "employee.h";
 #include "manager.h";
 #include "boss.h";
+#include <string>;
+#include <fstream>;
+
+#define FILENAME "empFile.txt"
+
 using namespace std;
 
 class WorkerManager {
 public:
+
+	
+
 	// 构造函数
-	WorkerManager();	
+	WorkerManager();
 
 	// 展示菜单
 	void Show_Menu();
@@ -25,6 +33,14 @@ public:
 
 	// 添加职工
 	void Add_Emp();
+
+	// 保存文件
+	void save();
+
+	// 判断文件是否为空
+	bool m_FileIsEmpty;
+
+
 
 	// 析构函数
 	~WorkerManager();

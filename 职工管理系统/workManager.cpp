@@ -7,8 +7,41 @@ using namespace std;
 // 实现构造函数
 WorkerManager::WorkerManager() {
 	cout << "WorkerManager构造函数" << endl;
-	this->m_EmpNum = 0;
-	this->m_EmpArray = NULL;
+
+	// 文件不存在
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+
+	if (!ifs.is_open()) {
+		cout << "文件不存在" << endl;
+		// 初始化属性
+		// 初始化记录人数
+		this->m_EmpNum = 0;
+		// 初始化数组指针
+		this->m_EmpArray = NULL;
+		// 初始化文件是否为空
+		this->m_FileIsEmpty = true;
+		ifs.close();
+		return;
+	}
+	else {
+		char ch;
+		ifs >> ch;
+		// 读取文件结尾标志
+		// 因为只读取了一个字符，文件当前光标后移一位，所以此时判断是否到了文件尾就能判断文件是否为空
+		if (ifs.eof()) {
+			cout << "文件为空!" << endl;
+			// 初始化属性
+			// 初始化记录人数
+			this->m_EmpNum = 0;
+			// 初始化数组指针
+			this->m_EmpArray = NULL;
+			// 初始化文件是否为空
+			this->m_FileIsEmpty = true;
+			ifs.close();
+			return;
+		}
+	}
 }
 
 // 展示菜单
@@ -36,6 +69,10 @@ void WorkerManager::Exit() {
 // 实现析构函数
 WorkerManager::~WorkerManager() {
 	cout << "WorkerManager析构函数" << endl;
+	if (this->m_EmpArray != NULL) {
+		delete[] this->m_EmpArray;
+		this->m_EmpArray = NULL;
+	}
 }
 
 
@@ -65,13 +102,13 @@ void WorkerManager::Add_Emp() {
 			string name; // 职工姓名
 			int dSelect; // 部门选择
 
-			cout << "请输入第" << i + 1 << " 位职工编号" << endl;
+			cout << "请输入第 " << i + 1 << " 位职工编号" << endl;
 			cin >> id;
 
-			cout << "请输入第" << i + 1 << " 位职工姓名" << endl;
+			cout << "请输入第 " << i + 1 << " 位职工姓名" << endl;
 			cin >> name;
 			
-			cout << "请选择第" << i + 1 << " 位职工职位" << endl;
+			cout << "请选择第 " << i + 1 << " 位职工职位" << endl;
 			cout << "1、普通职工" << endl;
 			cout << "2、经理" << endl;
 			cout << "3、老板" << endl;
@@ -102,7 +139,14 @@ void WorkerManager::Add_Emp() {
 		this->m_EmpArray = newSpace;
 		// 更新新的职工人数
 		this->m_EmpNum = newSize;
+		
+		// 将数据保存到文件中
+		this->save();
+
+		this->m_FileIsEmpty = false;
+
 		cout << "成功添加" << addNum << "名新职工" << endl;
+		
 	}
 	else {
 		cout << "输入数据有误" << endl;
@@ -111,4 +155,19 @@ void WorkerManager::Add_Emp() {
 	// 按任意键后 清屏回到上级目录
 	system("pause");
 	system("cls");
+}
+
+void WorkerManager::save() {
+	ofstream ofs;
+	ofs.open(FILENAME, ios::out);
+
+	for (int i = 0;i < this->m_EmpNum; i++) {
+		string name = this->m_EmpArray[i]->m_Name;
+		int id = this->m_EmpArray[i]->m_Id;
+
+		int deptId = this->m_EmpArray[i]->m_DeptId;
+
+		ofs << name << "\t" << id << "\t" << deptId << endl;
+	}
+	ofs.close();
 }
