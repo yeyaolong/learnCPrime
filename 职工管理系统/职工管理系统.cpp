@@ -24,6 +24,7 @@ void showMenu(WorkerManager &wm) {
 			break;
 		case '2':
 			// 显示职工
+			wm.Show_Emp();
 			break;
 		case '3':
 			// 删除职工
@@ -53,7 +54,7 @@ int main() {
 
 	
 
-	Worker* worker = NULL;
+	/*Worker* worker = NULL;
 	worker = new Employee(1, "张三", 1);
 	worker->showInfo();
 
@@ -62,7 +63,7 @@ int main() {
 	manager->showInfo();
 
 	Worker* boss = new Boss(3, "王五", 3);
-	boss->showInfo();
+	boss->showInfo();*/
 
 	/*Boss* boss2 = new Boss(4, "赵六", 4);
 	boss2->showInfo();*/

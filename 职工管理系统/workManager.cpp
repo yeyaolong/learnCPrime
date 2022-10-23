@@ -42,6 +42,24 @@ WorkerManager::WorkerManager() {
 			return;
 		}
 	}
+	// 文件按存在，并且又记录数据
+	int num = this->get_EmpNum();
+	cout << "职工人数为： " << num << endl;
+	this->m_EmpNum = num;
+
+	// 开辟空间
+	this->m_EmpArray = new Worker* [this->m_EmpNum];
+	// 将文件中数据存放到数组中
+	this->init_Emp();
+	cout << "姓名：" << this->m_EmpArray[0]->m_Name << endl;
+	for (int i = 0; i < this->m_EmpNum; i++) {
+		this->m_EmpArray[i]->showInfo();
+		
+		/*cout << "职工编号：" << this->m_EmpArray[i]->m_Id
+			<< "姓名：" << this->m_EmpArray[i]->m_Name
+			<< "部门编号：" << this->m_EmpArray[i]->m_DeptId
+			<< endl;*/
+	}
 }
 
 // 展示菜单
@@ -66,14 +84,7 @@ void WorkerManager::Exit() {
 	exit(0);
 }
 
-// 实现析构函数
-WorkerManager::~WorkerManager() {
-	cout << "WorkerManager析构函数" << endl;
-	if (this->m_EmpArray != NULL) {
-		delete[] this->m_EmpArray;
-		this->m_EmpArray = NULL;
-	}
-}
+
 
 
 // 添加职工
@@ -167,7 +178,114 @@ void WorkerManager::save() {
 
 		int deptId = this->m_EmpArray[i]->m_DeptId;
 
-		ofs << name << "\t" << id << "\t" << deptId << endl;
+		ofs << name << " " << id << " " << deptId << endl;
 	}
 	ofs.close();
+}
+// 统计人数
+int WorkerManager::get_EmpNum() {
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+
+	int id;
+	string name;
+	int dId;
+
+
+	int num = 0;
+	if (ifs.is_open()) {
+		// 视频中老师的写法
+		// 读一行的数据，感觉这样一个个把一行的数据读出来好累啊，为啥不直接统计行数呢
+		// >> 这种读法，就是读到空格就算语句结束，所以一行要读3次
+		// 但是这种写法有个问题就是，如果是运行程序，然后选择 Add_Emp 加入的员工 是不会被计算的
+		// 因为我的 WorkerManager::save 方法给的不是空格 而是 '\t'
+		/*while (ifs >> name && ifs >> id && ifs >> dId) {
+			num++;
+		}*/
+
+		//****************** 我自己尝试的 错误写法 开始*******************
+		//Worker worker; // 不能用worker去接收，因为 worker是虚拟类
+		//Employee emp; // 也不能用Employee和Manager和Boss去接收，因为没有它们默认构造函数
+		
+		//ifs.getline(*worker, sizeof(Employee))
+		//****************** 我自己尝试的 错误写法 结束*******************
+
+		string buf;
+		// 这个getline是basic_istream中的getline方法，要与 ifs.getline 区分
+		while (getline(ifs, buf)) {
+			num++;
+		}
+	}
+	
+	ifs.close();
+
+	return num;
+	
+}
+// 初始化员工
+void WorkerManager::init_Emp() {
+
+
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+
+	int id;
+	string name;
+	int dId;
+
+	string buf;
+	int index = 0;
+	while (ifs >> name && ifs >> id && ifs >> dId) {
+		Worker* worker = NULL;
+
+		
+		if (dId == 1) {
+			// 普通职工
+			worker = new Employee(id, name, dId);
+		}
+		else if (dId == 2) {
+			// 经理
+			worker = new Manager(id, name, dId);
+		}
+		else if (dId == 3) {
+			// 老板
+			worker = new Boss(id, name, dId);
+		}
+		
+		
+		/*cout << "初始化：" << index 
+			<< "员工姓名:" << worker->m_Name
+			<< "员工id:" << worker->m_Id
+			<< endl;*/
+		this->m_EmpArray[index] = worker;
+		index++;
+
+
+	}
+	ifs.close();
+}
+
+void WorkerManager::Show_Emp()
+{
+	if (this->m_FileIsEmpty) {
+		cout << "文件不存在或记录为空" << endl;
+		return;
+	}
+	for (int i = 0; i < this->m_EmpNum;i++) {
+		// 利用多态调用程序接口
+		this->m_EmpArray[i]->showInfo();
+	}
+
+	system("pause");
+	system("cls");
+
+}
+
+// 实现析构函数
+WorkerManager::~WorkerManager() {
+	cout << "WorkerManager析构函数" << endl;
+	if (this->m_EmpArray != NULL) {
+		delete[] this->m_EmpArray;
+		this->m_EmpArray = NULL;
+	}
 }

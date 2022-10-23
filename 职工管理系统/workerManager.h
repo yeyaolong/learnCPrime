@@ -39,8 +39,14 @@ public:
 
 	// 判断文件是否为空
 	bool m_FileIsEmpty;
+	// 统计人数
+	int get_EmpNum();
 
+	// 初始化员工
+	void init_Emp();
 
+	// 显示职工
+	void Show_Emp();
 
 	// 析构函数
 	~WorkerManager();
