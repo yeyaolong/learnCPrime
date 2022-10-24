@@ -48,6 +48,12 @@ public:
 	// 显示职工
 	void Show_Emp();
 
+	// 判断职工是否存在,如果存在，返回数组下标，不存在则返回-1
+	int IsExit(int id);
+
+	// 删除职工
+	void Del_Emp();
+
 	// 析构函数
 	~WorkerManager();
 };

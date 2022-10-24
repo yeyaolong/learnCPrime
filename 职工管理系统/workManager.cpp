@@ -281,6 +281,57 @@ void WorkerManager::Show_Emp()
 
 }
 
+
+int WorkerManager::IsExit(int id) {
+	int index = -1;
+
+	for (int i = 0; i < this->m_EmpNum; i++) {
+		if (this->m_EmpArray[i]->m_Id == id) {
+			// 找到职工
+			index = i;
+
+			break;
+		}
+	}
+
+	return index;
+}
+
+void WorkerManager::Del_Emp() {
+	if (this->m_FileIsEmpty) {
+		cout << "文件不存在或记录为空" << endl;
+	}
+	else {
+		// 按照职工编号删除
+		cout << "请删除想要删除的职工编号：" << endl;
+		int id = -1;
+		cin >> id;
+
+		int index = this->IsExit(id);
+
+		if (index != -1) {
+			// 职工存在
+			for (int i = index; i < this->m_EmpNum - 1; i++) {
+				this->m_EmpArray[i] = this->m_EmpArray[i + 1];
+			}
+			this->m_EmpNum--;
+			if (this->m_EmpNum == 0) {
+				this->m_FileIsEmpty = true;
+			}
+			// 数据更新到文件中
+			this->save();
+
+			cout << "删除成功" << endl;
+		}
+		else {
+			cout << "删除失败，未找到该职工" << endl;
+		}
+	}
+	// 按任意键清屏
+	system("pause");
+	system("cls");
+}
+
 // 实现析构函数
 WorkerManager::~WorkerManager() {
 	cout << "WorkerManager析构函数" << endl;
