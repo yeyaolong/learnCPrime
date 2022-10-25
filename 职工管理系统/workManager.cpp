@@ -332,6 +332,70 @@ void WorkerManager::Del_Emp() {
 	system("cls");
 }
 
+void WorkerManager::Mod_Emp() {
+	if (this->m_FileIsEmpty) {
+		cout << "修改不存在或记录为空" << endl;
+	}
+	else {
+		// 按照职工编号删除
+		cout << "请删除想要修改的职工编号：" << endl;
+		int id = -1;
+		cin >> id;
+
+		int index = this->IsExit(id);
+
+		if (index != -1) {
+			// 职工存在
+			string name;
+			int dId;
+			
+			cout << "请修改职工姓名：" << endl;
+			cin >> name;
+			cout << "请修改职工岗位，1：员工，2：部门经理，3：老板" << endl;
+			cin >> dId;
+			if (dId != 1 && dId != 2 && dId != 3) {
+				cout << "职工部门异常" << endl;
+				return;
+			}
+			// 因为都是Worker* 指针，所以直接修改worker成员属性，能运行，但是不规范
+			// 员工的职位可能发生改变，所以，应该是要对应的不同职位对象的
+			// 所以对应对象的showInfo方法，调用的还会是原来的类的showInfo
+			// 比如，张三原本是员工,dId = 1，此时调用的就是 employee.showInfo
+			// 但是，修改后，张三变成了经理,dId = 2，但是此时调用依然是 employee.showInfo，而不是manager.showInfo
+			/*
+			this->m_EmpArray[index]->m_Name = name;
+			this->m_EmpArray[index]->m_DeptId = dId;
+			*/
+			Worker* worker = NULL;
+			switch (dId) {
+			case 1:
+				worker = new Employee(id, name, 1);
+				break;
+			case 2:
+				worker = new Manager(id, name, 2);
+				break;
+			case 3:
+				worker = new Boss(id, name, 3);
+				break;
+			default:
+				break;
+			}
+			delete this->m_EmpArray[index];
+			this->m_EmpArray[index] = worker;
+			// 数据更新到文件中
+			this->save();
+
+			cout << "修改成功" << endl;
+		}
+		else {
+			cout << "修改失败，未找到该职工" << endl;
+		}
+	}
+	// 按任意键清屏
+	system("pause");
+	system("cls");
+}
+
 // 实现析构函数
 WorkerManager::~WorkerManager() {
 	cout << "WorkerManager析构函数" << endl;

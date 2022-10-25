@@ -42,8 +42,9 @@ public:
 	// 统计人数
 	int get_EmpNum();
 
-	// 初始化员工
+	// 根据文件内的数据初始化员工
 	void init_Emp();
+
 
 	// 显示职工
 	void Show_Emp();
@@ -53,6 +54,9 @@ public:
 
 	// 删除职工
 	void Del_Emp();
+
+	// 修改职工
+	void Mod_Emp();
 
 	// 析构函数
 	~WorkerManager();
