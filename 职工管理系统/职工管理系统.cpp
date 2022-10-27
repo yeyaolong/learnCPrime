@@ -37,6 +37,7 @@ void showMenu(WorkerManager &wm) {
 			break;
 		case '5':
 			// 查找职工
+			wm.Find_Emp();
 			break;
 		case '6':
 			// 对职工排序

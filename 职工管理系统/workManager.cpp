@@ -395,6 +395,72 @@ void WorkerManager::Mod_Emp() {
 	system("pause");
 	system("cls");
 }
+// 查找职工
+Worker* WorkerManager::Find_Emp() {
+	Worker* worker = NULL;
+
+	if (this->m_FileIsEmpty) {
+		cout << "文件不存在或记录为空!" << endl;
+	}
+	else {
+		cout << "请输入查找方式：" << endl;
+		cout << "1、按照职工编号查找" << endl;
+		cout << "2、按照职工姓名查找" << endl;
+
+		int select = 0;
+
+		cin >> select;
+
+		// 加入是否查到的标志
+		bool flag = false;
+		
+		if (select == 1) {
+			int id;
+			cout << "请输入职工的编号：" << endl;
+			cin >> id;
+
+			int ret = IsExit(id);
+			if (ret != -1) {
+				cout << "查找成功！该信息如下:" << endl;
+				worker = this->m_EmpArray[ret];
+
+				worker->showInfo();
+				flag = true;
+			}
+			else {
+				cout << "查无此人" << endl;
+			}
+		}
+		else if (select == 2) {
+			string name;
+			cout << "请输入查找的姓名：" << endl;
+
+			cin >> name;
+			
+			for (int i = 0; i < m_EmpNum; i++) {
+				if (this->m_EmpArray[i]->m_Name == name) {
+					// 我这种写法，虽然能查出多个人并展示，但实际上，只会返回最后一个员工
+					worker = this->m_EmpArray[i];
+					worker->showInfo();
+					flag = true;
+				}
+			}
+			if (!flag) {
+				cout << "查无此人" << endl;
+			}
+		}
+		else {
+			cout << "输入选项有误,请重新输入" << endl;
+			worker = Find_Emp();
+		}
+	}
+
+
+
+
+	return worker;
+
+}
 
 // 实现析构函数
 WorkerManager::~WorkerManager() {
