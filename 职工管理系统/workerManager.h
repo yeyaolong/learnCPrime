@@ -58,8 +58,12 @@ public:
 	// 修改职工
 	void Mod_Emp();
 
-	// void 查找职工
+	// 查找职工
 	Worker* Find_Emp();
+	// 排序职工
+	void Sort_Emp();
+	// 清空文件
+	void Clear_File();
 
 	// 析构函数
 	~WorkerManager();

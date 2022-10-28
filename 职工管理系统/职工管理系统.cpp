@@ -41,9 +41,11 @@ void showMenu(WorkerManager &wm) {
 			break;
 		case '6':
 			// 对职工排序
+			wm.Sort_Emp();
 			break;
 		case '7':
 			// 清空文档
+			wm.Clear_File();
 			break;
 		default:
 			// 清屏
